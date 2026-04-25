@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecommerce_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: password # Replace with actual password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false # Set to true to see SQL in logs
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+logging:
+  level:
+    root: INFO
+    com.ecommerce.api: DEBUG
+    org.springframework.security: INFO
+    org.hibernate.SQL: INFO
+
+app:
+  jwt:
+    secret: 9a4f2c8d3b7a1e6f45c8a0b3f267d8b1d4e6f3c8a9d2b5f8e3a9c8b5f6v8a3d9
+    expirationMs: 86400000 # 24 hours
